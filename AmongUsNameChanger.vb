@@ -8,7 +8,7 @@ Public Class AmongUsNameChanger
     Private settingsFile As String
     Private Const settingsSeparator As Char = ","c
 
-    Private Async Sub AmongUsNameChanger_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Async Sub AmongUsNameChanger_Shown() Handles MyBase.Shown
         dateSelector.MaxDate = Date.Today
 
         settingsFolder = Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), "AppData", "LocalLow", "Innersloth", "Among Us")
@@ -66,13 +66,17 @@ Public Class AmongUsNameChanger
     End Function
 
     Private Sub txtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtName.KeyPress
-        e.Handled = (e.KeyChar = ","c)
+        e.Handled = (e.KeyChar = settingsSeparator)
     End Sub
 
-    Private Async Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Async Sub btnSave_Click() Handles btnSave.Click
         grpName.Enabled = False
         grpDate.Enabled = False
         btnSave.Enabled = False
+
+        ' make backup, just in case
+        Dim destFileName As String = settingsFile & "_backup_" & Date.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss.fff")
+        Await Task.Run(Sub() File.Copy(settingsFile, destFileName))
 
         ' read file to array, and split array
         Dim lines As String() = Await Task.Run(Function() File.ReadAllLines(settingsFile))
@@ -94,7 +98,7 @@ Public Class AmongUsNameChanger
         btnSave.Enabled = True
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click() Handles btnCancel.Click
         Application.Exit()
     End Sub
 End Class
