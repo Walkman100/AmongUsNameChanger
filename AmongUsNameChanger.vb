@@ -98,7 +98,7 @@ Public Class AmongUsNameChanger
         btnSave.Enabled = True
     End Sub
 
-    Private Sub btnCancel_Click() Handles btnCancel.Click
+    Private Sub btnClose_Click() Handles btnClose.Click
         Application.Exit()
     End Sub
 End Class

@@ -27,7 +27,7 @@ Partial Class AmongUsNameChanger
         Me.grpDate = New System.Windows.Forms.GroupBox()
         Me.dateSelector = New System.Windows.Forms.MonthCalendar()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.lblSettingsFolderLbl = New System.Windows.Forms.Label()
         Me.lblSettingsFileLbl = New System.Windows.Forms.Label()
         Me.lblSettingsFolder = New System.Windows.Forms.Label()
@@ -38,6 +38,8 @@ Partial Class AmongUsNameChanger
         '
         'grpName
         '
+        Me.grpName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grpName.Controls.Add(Me.txtName)
         Me.grpName.Enabled = False
         Me.grpName.Location = New System.Drawing.Point(12, 45)
@@ -58,6 +60,9 @@ Partial Class AmongUsNameChanger
         '
         'grpDate
         '
+        Me.grpDate.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grpDate.Controls.Add(Me.dateSelector)
         Me.grpDate.Enabled = False
         Me.grpDate.Location = New System.Drawing.Point(12, 96)
@@ -79,6 +84,7 @@ Partial Class AmongUsNameChanger
         '
         'btnSave
         '
+        Me.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnSave.Enabled = False
         Me.btnSave.Location = New System.Drawing.Point(12, 301)
         Me.btnSave.Name = "btnSave"
@@ -87,15 +93,16 @@ Partial Class AmongUsNameChanger
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'btnCancel
+        'btnClose
         '
-        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(141, 301)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(122, 23)
-        Me.btnCancel.TabIndex = 7
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnClose.Location = New System.Drawing.Point(141, 301)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(122, 23)
+        Me.btnClose.TabIndex = 7
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'lblSettingsFolderLbl
         '
@@ -142,13 +149,13 @@ Partial Class AmongUsNameChanger
         Me.AcceptButton = Me.btnSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnCancel
+        Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(275, 336)
         Me.Controls.Add(Me.lblSettingsFile)
         Me.Controls.Add(Me.lblSettingsFolder)
         Me.Controls.Add(Me.lblSettingsFileLbl)
         Me.Controls.Add(Me.lblSettingsFolderLbl)
-        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.grpDate)
         Me.Controls.Add(Me.grpName)
@@ -168,7 +175,7 @@ Partial Class AmongUsNameChanger
     Friend WithEvents txtName As System.Windows.Forms.TextBox
     Friend WithEvents dateSelector As System.Windows.Forms.MonthCalendar
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents lblSettingsFolderLbl As System.Windows.Forms.Label
     Friend WithEvents lblSettingsFileLbl As System.Windows.Forms.Label
     Friend WithEvents lblSettingsFolder As System.Windows.Forms.Label
