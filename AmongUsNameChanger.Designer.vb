@@ -43,7 +43,7 @@ Partial Class AmongUsNameChanger
         Me.grpName.Location = New System.Drawing.Point(12, 45)
         Me.grpName.Name = "grpName"
         Me.grpName.Size = New System.Drawing.Size(251, 45)
-        Me.grpName.TabIndex = 0
+        Me.grpName.TabIndex = 4
         Me.grpName.TabStop = False
         Me.grpName.Text = "Name"
         '
@@ -63,7 +63,7 @@ Partial Class AmongUsNameChanger
         Me.grpDate.Location = New System.Drawing.Point(12, 96)
         Me.grpDate.Name = "grpDate"
         Me.grpDate.Size = New System.Drawing.Size(251, 199)
-        Me.grpDate.TabIndex = 0
+        Me.grpDate.TabIndex = 5
         Me.grpDate.TabStop = False
         Me.grpDate.Text = "Birth Date"
         '
@@ -73,6 +73,7 @@ Partial Class AmongUsNameChanger
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dateSelector.Location = New System.Drawing.Point(12, 25)
+        Me.dateSelector.MaxSelectionCount = 1
         Me.dateSelector.Name = "dateSelector"
         Me.dateSelector.TabIndex = 0
         '
@@ -82,7 +83,7 @@ Partial Class AmongUsNameChanger
         Me.btnSave.Location = New System.Drawing.Point(12, 301)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(122, 23)
-        Me.btnSave.TabIndex = 1
+        Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
@@ -92,7 +93,7 @@ Partial Class AmongUsNameChanger
         Me.btnCancel.Location = New System.Drawing.Point(141, 301)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(122, 23)
-        Me.btnCancel.TabIndex = 2
+        Me.btnCancel.TabIndex = 7
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
@@ -102,8 +103,9 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFolderLbl.Location = New System.Drawing.Point(12, 9)
         Me.lblSettingsFolderLbl.Name = "lblSettingsFolderLbl"
         Me.lblSettingsFolderLbl.Size = New System.Drawing.Size(132, 13)
-        Me.lblSettingsFolderLbl.TabIndex = 3
+        Me.lblSettingsFolderLbl.TabIndex = 0
         Me.lblSettingsFolderLbl.Text = "Among Us Settings Folder:"
+        Me.lblSettingsFolderLbl.UseMnemonic = False
         '
         'lblSettingsFileLbl
         '
@@ -111,8 +113,9 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFileLbl.Location = New System.Drawing.Point(12, 22)
         Me.lblSettingsFileLbl.Name = "lblSettingsFileLbl"
         Me.lblSettingsFileLbl.Size = New System.Drawing.Size(119, 13)
-        Me.lblSettingsFileLbl.TabIndex = 4
+        Me.lblSettingsFileLbl.TabIndex = 1
         Me.lblSettingsFileLbl.Text = "Among Us Settings File:"
+        Me.lblSettingsFileLbl.UseMnemonic = False
         '
         'lblSettingsFolder
         '
@@ -120,8 +123,9 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFolder.Location = New System.Drawing.Point(150, 9)
         Me.lblSettingsFolder.Name = "lblSettingsFolder"
         Me.lblSettingsFolder.Size = New System.Drawing.Size(54, 13)
-        Me.lblSettingsFolder.TabIndex = 5
+        Me.lblSettingsFolder.TabIndex = 2
         Me.lblSettingsFolder.Text = "Loading..."
+        Me.lblSettingsFolder.UseMnemonic = False
         '
         'lblSettingsFile
         '
@@ -129,8 +133,9 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFile.Location = New System.Drawing.Point(150, 22)
         Me.lblSettingsFile.Name = "lblSettingsFile"
         Me.lblSettingsFile.Size = New System.Drawing.Size(54, 13)
-        Me.lblSettingsFile.TabIndex = 6
+        Me.lblSettingsFile.TabIndex = 3
         Me.lblSettingsFile.Text = "Loading..."
+        Me.lblSettingsFile.UseMnemonic = False
         '
         'AmongUsNameChanger
         '
