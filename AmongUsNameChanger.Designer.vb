@@ -23,9 +23,9 @@ Partial Class AmongUsNameChanger
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.grpName = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtName = New System.Windows.Forms.TextBox()
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.grpDate = New System.Windows.Forms.GroupBox()
+        Me.dateSelector = New System.Windows.Forms.MonthCalendar()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblSettingsFolderLbl = New System.Windows.Forms.Label()
@@ -33,7 +33,7 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFolder = New System.Windows.Forms.Label()
         Me.lblSettingsFile = New System.Windows.Forms.Label()
         Me.grpName.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.grpDate.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpName
@@ -47,17 +47,6 @@ Partial Class AmongUsNameChanger
         Me.grpName.TabStop = False
         Me.grpName.Text = "Name"
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.MonthCalendar1)
-        Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 96)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(251, 199)
-        Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Birth Date"
-        '
         'txtName
         '
         Me.txtName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -67,14 +56,25 @@ Partial Class AmongUsNameChanger
         Me.txtName.Size = New System.Drawing.Size(239, 20)
         Me.txtName.TabIndex = 0
         '
-        'MonthCalendar1
+        'grpDate
         '
-        Me.MonthCalendar1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.grpDate.Controls.Add(Me.dateSelector)
+        Me.grpDate.Enabled = False
+        Me.grpDate.Location = New System.Drawing.Point(12, 96)
+        Me.grpDate.Name = "grpDate"
+        Me.grpDate.Size = New System.Drawing.Size(251, 199)
+        Me.grpDate.TabIndex = 0
+        Me.grpDate.TabStop = False
+        Me.grpDate.Text = "Birth Date"
+        '
+        'dateSelector
+        '
+        Me.dateSelector.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MonthCalendar1.Location = New System.Drawing.Point(12, 25)
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 0
+        Me.dateSelector.Location = New System.Drawing.Point(12, 25)
+        Me.dateSelector.Name = "dateSelector"
+        Me.dateSelector.TabIndex = 0
         '
         'btnSave
         '
@@ -145,23 +145,23 @@ Partial Class AmongUsNameChanger
         Me.Controls.Add(Me.lblSettingsFolderLbl)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.grpDate)
         Me.Controls.Add(Me.grpName)
         Me.Name = "AmongUsNameChanger"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Among Us Name Changer"
         Me.grpName.ResumeLayout(False)
         Me.grpName.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
+        Me.grpDate.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents grpName As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents grpDate As System.Windows.Forms.GroupBox
     Friend WithEvents txtName As System.Windows.Forms.TextBox
-    Friend WithEvents MonthCalendar1 As System.Windows.Forms.MonthCalendar
+    Friend WithEvents dateSelector As System.Windows.Forms.MonthCalendar
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents lblSettingsFolderLbl As System.Windows.Forms.Label
