@@ -1,2 +1,2 @@
-﻿Public Class AmongUsNameChanger
+Public Class AmongUsNameChanger
 End Class
