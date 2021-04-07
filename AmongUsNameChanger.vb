@@ -6,6 +6,7 @@ Imports System.Windows.Forms
 Public Class AmongUsNameChanger
     Private settingsFolder As String
     Private settingsFile As String
+    Private Const settingsSeparator As Char = ","c
 
     Private Async Sub AmongUsNameChanger_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         dateSelector.MaxDate = Date.Today
@@ -38,6 +39,7 @@ Public Class AmongUsNameChanger
             lblSettingsFile.Text = "Found & Loaded"
             grpName.Enabled = True
             grpDate.Enabled = True
+            btnSave.Enabled = True
         Catch ex As Exception
             lblSettingsFile.Text = "Found! Error loading!"
             MessageBox.Show(ex.Message, "Error loading file", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -51,7 +53,7 @@ Public Class AmongUsNameChanger
             line = Await reader.ReadLineAsync()
         End Using
 
-        Dim arr As String() = line.Split(","c)
+        Dim arr As String() = line.Split(settingsSeparator)
         If arr.Length < 26 Then Throw New InvalidDataException("Settings file corrupt or old game version!")
 
         txtName.Text = arr(0)
@@ -67,8 +69,29 @@ Public Class AmongUsNameChanger
         e.Handled = (e.KeyChar = ","c)
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Async Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        grpName.Enabled = False
+        grpDate.Enabled = False
+        btnSave.Enabled = False
 
+        ' read file to array, and split array
+        Dim lines As String() = Await Task.Run(Function() File.ReadAllLines(settingsFile))
+        Dim dataArr As String() = lines(0).Split(settingsSeparator)
+
+        dataArr(0) = txtName.Text
+
+        Dim birthDate As Date = dateSelector.SelectionStart
+        dataArr(24) = birthDate.Day.ToString()
+        dataArr(23) = birthDate.Month.ToString()
+        dataArr(25) = birthDate.Year.ToString()
+
+        ' join array, write file
+        lines(0) = String.Join(settingsSeparator, dataArr)
+        Await Task.Run(Sub() File.WriteAllLines(settingsFile, lines))
+
+        grpName.Enabled = True
+        grpDate.Enabled = True
+        btnSave.Enabled = True
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
