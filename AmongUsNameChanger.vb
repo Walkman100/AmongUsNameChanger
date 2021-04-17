@@ -11,6 +11,10 @@ Public Class AmongUsNameChanger
     Private Async Sub AmongUsNameChanger_Shown() Handles MyBase.Shown
         dateSelector.MaxDate = Date.Today
 
+        Try ' set form icon from EXE, but don't crash if it fails
+            Me.Icon = Drawing.Icon.ExtractAssociatedIcon(New Uri(Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath)
+        Catch : End Try
+
         settingsFolder = Path.Combine(Environment.GetEnvironmentVariable("USERPROFILE"), "AppData", "LocalLow", "Innersloth", "Among Us")
         settingsFile = Path.Combine(settingsFolder, "playerPrefs")
 
