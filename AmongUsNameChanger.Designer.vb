@@ -32,6 +32,7 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFileLbl = New System.Windows.Forms.Label()
         Me.lblSettingsFolder = New System.Windows.Forms.Label()
         Me.lblSettingsFile = New System.Windows.Forms.Label()
+        Me.lblVersion = New System.Windows.Forms.Label()
         Me.grpName.SuspendLayout()
         Me.grpDate.SuspendLayout()
         Me.SuspendLayout()
@@ -144,6 +145,17 @@ Partial Class AmongUsNameChanger
         Me.lblSettingsFile.Text = "Loading..."
         Me.lblSettingsFile.UseMnemonic = False
         '
+        'lblVersion
+        '
+        Me.lblVersion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblVersion.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersion.Location = New System.Drawing.Point(244, 325)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(30, 9)
+        Me.lblVersion.TabIndex = 8
+        Me.lblVersion.Text = "v0.0.0"
+        Me.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'AmongUsNameChanger
         '
         Me.AcceptButton = Me.btnSave
@@ -151,6 +163,7 @@ Partial Class AmongUsNameChanger
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(275, 336)
+        Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.lblSettingsFile)
         Me.Controls.Add(Me.lblSettingsFolder)
         Me.Controls.Add(Me.lblSettingsFileLbl)
@@ -180,4 +193,5 @@ Partial Class AmongUsNameChanger
     Friend WithEvents lblSettingsFileLbl As System.Windows.Forms.Label
     Friend WithEvents lblSettingsFolder As System.Windows.Forms.Label
     Friend WithEvents lblSettingsFile As System.Windows.Forms.Label
+    Friend WithEvents lblVersion As System.Windows.Forms.Label
 End Class

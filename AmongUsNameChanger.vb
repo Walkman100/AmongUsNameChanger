@@ -11,6 +11,7 @@ Public Class AmongUsNameChanger
     Private Async Sub AmongUsNameChanger_Shown() Handles MyBase.Shown
         dateSelector.MaxDate = Date.Today
 
+        lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build
         Try ' set form icon from EXE, but don't crash if it fails
             Me.Icon = Drawing.Icon.ExtractAssociatedIcon(New Uri(Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath)
         Catch : End Try
